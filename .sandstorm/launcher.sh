@@ -13,6 +13,14 @@ rm -rf /var/run
 mkdir -p /var/run
 mkdir -p /var/run/mysqld
 
+# The mautic cache directory
+mkdir -p /var/mautic-cache
+# The mautic logs dir, which probably we don't need to store at all, I wonder?
+mkdir -p /var/mautic-log
+
+# Make the directory where PHP will store sessions.
+mkdir -p /var/lib/php5/sessions
+
 # Ensure mysql tables created
 HOME=/etc/mysql /usr/bin/mysql_install_db --force
 
