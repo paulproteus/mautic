@@ -1,5 +1,5 @@
 # mautic
-Sandsotrm marketing automation system
+Sandstorm marketing automation system
 
 Mautic Introduction
 ===========
