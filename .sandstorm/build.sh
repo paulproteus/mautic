@@ -5,13 +5,6 @@ set -euo pipefail
 
 cd /opt/app
 
-if [ -f /opt/app/composer.json ] ; then
-    if [ ! -f composer.phar ] ; then
-        curl -sS https://getcomposer.org/installer | php
-    fi
-    php composer.phar install
-fi
-
 PLACE_IN_MAUTIC_REPO_WHERE_IT_EXPECTS_CACHE_DIR="/opt/app/app/cache/prod"
 # Make sure the parent directory exists
 mkdir -p $(dirname "$PLACE_IN_MAUTIC_REPO_WHERE_IT_EXPECTS_CACHE_DIR")
