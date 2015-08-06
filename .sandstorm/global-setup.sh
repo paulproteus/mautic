@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -euo pipefail
 echo localhost > /etc/hostname
 hostname localhost
 curl https://install.sandstorm.io/ > /host-dot-sandstorm/caches/install.sh
