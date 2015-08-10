@@ -80,4 +80,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     override.vm.synced_folder ENV["HOME"] + "/.sandstorm", "/host-dot-sandstorm", type: "9p", accessmode: "passthrough"
     override.vm.synced_folder "..", "/vagrant", type: "9p", accessmode: "passthrough"
   end
+
+  # In the case of Windows, enable symlink support in the guest.
+  config.vm.provider :virtualbox do |vb, override|
+     vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
+  end
 end
